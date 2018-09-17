@@ -13,7 +13,7 @@ warnings.filterwarnings(action='ignore', category=DeprecationWarning)
 response = s3.get_object(Bucket='aiml-rumi', Key='ServerlessAIWorkshop/diabetes.data.csv')
 
 # load data
-dataset = loadtxt('pima-indians-diabetes.data.csv', delimiter=",")
+dataset = loadtxt('diabetes.data.csv', delimiter=",")
 
 # split data into X and y
 X = dataset[:,0:8]
