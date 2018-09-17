@@ -10,7 +10,7 @@ s3 = boto3.resource('s3')
 warnings.filterwarnings(action='ignore', category=DeprecationWarning)
 
 # get csv file from s3 bucket
-#s3.Object('aiml-rumi', 'diabetes.data.csv').download_file('diabetes.data.csv')
+s3.Object('aiml-rumi', 'ServerlessAIWorkshop/diabetes.data.csv').download_file('diabetes.data.csv')
 # bucket = s3.Bucket('aiml-rumi')
 # obj = bucket.Object('diabetes.data.csv')
 
