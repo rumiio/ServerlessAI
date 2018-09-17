@@ -6,11 +6,11 @@ from sklearn import preprocessing
 import warnings
 import boto3
 
-s3 = boto3.client('s3')
+s3 = boto3.resource('s3')
 warnings.filterwarnings(action='ignore', category=DeprecationWarning)
 
 # get csv file from s3 bucket
-response = s3.get_object(Bucket='aiml-rumi', Key='ServerlessAIWorkshop/diabetes.data.csv')
+s3.Object('aiml-rumi', 'diabetes.data.csv').download_file('diabetes.data.csv')
 
 # load data
 dataset = loadtxt('diabetes.data.csv', delimiter=",")
