@@ -10,7 +10,7 @@ s3 = boto3.client('s3')
 warnings.filterwarnings(action='ignore', category=DeprecationWarning)
 
 # get csv file from s3 bucket
-response = s3.get_object(Bucket='http://aiml-rumi.s3.amazonaws.com', Key='ServerlessAIWorkshop/diabetes.data.csv')
+response = s3.get_object(Bucket='s3://aiml-rumi', Key='ServerlessAIWorkshop/diabetes.data.csv')
 
 # load data
 dataset = loadtxt('pima-indians-diabetes.data.csv', delimiter=",")
